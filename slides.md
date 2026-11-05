@@ -26,13 +26,19 @@ class: ornate title-slide
 </div>
 
 ---
-
-# Siguiente diapositiva
-
-- Punto 1
-- Punto 2
+src: ./pages/01-tronco-comun.md
+---
 
 ---
+src: ./pages/02-camino-manana.md
+---
+
+---
+src: ./pages/03-camino-tarde.md
+---
+
+---
+routeAlias: cierre
 class: ornate credits-slide
 ---
 
