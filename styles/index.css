@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+:root {
+  --page: #f2f3f6;
+  --card: #fefff9;
+  --ink: #272125;
+  --muted: #8e9394;
+  --border: #6b7472;
+  --crimson: #96172e;
+
+  --vellum: #cfc3b1;
+  --oxblood: #681e1c;
+  --brick: #8b3a31;
+  --vermilion: #ad4933;
+  --gold: #b69663;
+  --sage: #9fad8a;
+  --iron: #341a12;
+
+  --slidev-theme-primary: var(--crimson);
+}
+
+.slidev-layout {
+  background: var(--page);
+  color: var(--ink);
+}
+
+h1, h2, h3 { font-family: 'VT323', monospace; letter-spacing: 0.02em; }
+.label     { font-family: 'Silkscreen', monospace; font-size: 12px; text-transform: uppercase; }
+
+.slidev-layout h1 {
+  color: var(--crimson);
+}
+
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: var(--oxblood);
+}
+
+.slidev-layout a {
+  color: var(--vermilion);
+  border-color: var(--gold);
+}
+
+.slidev-layout blockquote {
+  background: var(--card);
+  border-color: var(--gold);
+}
+
+.slidev-layout hr {
+  border-color: var(--border);
+}
+
+/* Ornate background, shared by title and credits */
+.slidev-layout.ornate {
+  position: relative;
+  background:
+    radial-gradient(var(--vellum) 1px, transparent 1px) 0 0 / 16px 16px,
+    radial-gradient(ellipse at center, var(--card) 35%, var(--page) 75%, var(--vellum) 130%);
+}
+
+/* Double frame */
+.ornate::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 3px solid var(--oxblood);
+  box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 7px var(--gold);
+  pointer-events: none;
+}
+
+/* Pixel corners */
+.ornate::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  background:
+    linear-gradient(var(--crimson), var(--crimson)) top left / 15px 15px no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) top right / 15px 15px no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) bottom left / 15px 15px no-repeat,
+    linear-gradient(var(--crimson), var(--crimson)) bottom right / 15px 15px no-repeat;
+  pointer-events: none;
+}
+
+/* Title slide */
+.slidev-layout.title-slide h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin: 0.5rem 0 0;
+  text-shadow: 3px 3px 0 var(--vellum);
+}
+
+.title-slide .label {
+  color: var(--brick);
+}
+
+.title-slide .divider {
+  width: 200px;
+  height: 4px;
+  margin: 1rem auto;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 12px);
+}
+
+.title-slide .subtitle {
+  font-family: 'VT323', monospace;
+  font-size: 2.25rem;
+  color: var(--oxblood);
+  margin: 0;
+}
+
+/* Credits slide */
+.slidev-layout.credits-slide h1 {
+  font-size: 3.5rem;
+  line-height: 1;
+  text-align: center;
+  margin: 0.25rem 0 1.25rem;
+  text-shadow: 3px 3px 0 var(--vellum);
+}
+
+.credits-slide .credits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 0.5rem;
+}
+
+.credits-slide .person {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.credits-slide .person.mirrored {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.credits-slide .portrait {
+  height: 192px;
+  width: auto;
+}
+
+.slidev-layout.credits-slide h2 {
+  font-size: 2.25rem;
+  line-height: 1;
+  margin: 0 0 0.25rem;
+}
+
+.credits-slide .info .label {
+  color: var(--brick);
+}
+
+.slidev-layout.credits-slide .handles {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.slidev-layout.credits-slide .handles li {
+  margin: 0;
+  padding: 0;
+}
+
+.credits-slide .qr {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0 0;
+}
+
+/* ~180px when exported at 1080p */
+.credits-slide .qr-code {
+  width: 96px;
+  height: 96px;
+  outline: 1px solid var(--vellum);
+}
+
+.credits-slide .qr .label {
+  margin-top: 0.25rem;
+}
+
+.credits-slide .cast {
+  position: absolute;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Mage sprite has an empty bottom row */
+.credits-slide .cast .who-mage {
+  margin-bottom: -4px;
+}
+
+/* Dithered ground: sparse, checker, solid */
+.credits-slide .ground {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  height: 36px;
+  background: linear-gradient(var(--oxblood), var(--oxblood)) bottom / 100% 12px no-repeat;
+}
+
+.credits-slide .ground::before,
+.credits-slide .ground::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.credits-slide .ground::before {
+  top: 0;
+  background: conic-gradient(var(--oxblood) 0 25%, transparent 0) 0 0 / 6px 6px;
+}
+
+.credits-slide .ground::after {
+  top: 12px;
+  background: repeating-conic-gradient(var(--oxblood) 0 25%, transparent 0 50%) 0 0 / 6px 6px;
+}
