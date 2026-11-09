@@ -43,110 +43,176 @@ Para garantizar una presentación de nivel de congreso internacional, el diseño
 ### SECCIÓN I: EL ORIGEN — Fundamentos Matemáticos y Computacionales
 * **Sensación Visual y Animación:** Aprendizaje fundamental, estudio preliminar, trazos geométricos precisos y chispas iniciales.
 
-#### Slide 02 — Evolución Histórica: 70 Años de Fundamentos Matemáticos
-* **Afirmación Principal (En Slide — Texto Técnico, Cero Alegoría Escrita):**
+#### Slide 02 — Línea de Tiempo I: La IA en Producción Antes del Salto (1950–2002)
+* **Componente:** [`components/AiTimeline.vue`](./components/AiTimeline.vue) con datos en [`data/timelines.ts`](./data/timelines.ts) (`TIMELINE_BEFORE`). `clicks: 2`.
+* **Afirmación Principal (En Slide — Texto Técnico):**
   * `.label`: `Parte I · Evolución Histórica`
-  * `h1`: `La IA no nació ayer: lleva 70 años gestándose`
-  * *Evidencia Visual:* Línea de tiempo pixel-art con 3 hitos técnicos: **1950/1956** (Lógica Simbólica y Computación), **1958/1986** (Perceptrón y Backpropagation), **2017+** (Modelos Fundacionales a Gran Escala).
+  * `h1`: `Llevas años usando IA sin llamarla así`
+  * *Evidencia Visual:* Eje horizontal; teoría arriba (rombos dorados), aplicaciones en producción abajo (tarjetas con ícono 8x8). El `scribe` toma notas al inicio del eje. Colores por era: `--ink` (sistemas de reglas) y `--gold` (aprendizaje automático).
+  * *Revelado:* inicio = Turing 1950, Perceptrón 1958 · clic 1 = reglas (1980–1987) + Backprop 1986 · clic 2 = aprendizaje automático (1992–2002).
 * **Contexto Científico y Guion:**
-  * La IA no es un fenómeno repentino de los últimos tres años. Sus bases matemáticas se establecieron a mediados del siglo XX.
-  * Durante décadas, la disciplina evolucionó desde la IA simbólica (reglas lógicas escritas manualmente) hacia el conexionismo (redes neuronales artificiales entrenadas mediante cálculo multivariable y optimización por descenso de gradiente).
+  * **Tesis — el "efecto IA":** cuando una técnica funciona y se vuelve cotidiana, deja de llamarse IA y pasa a llamarse "software". Los estudiantes llevan años usando IA (antispam, bloqueo de tarjetas, recomendaciones) sin reconocerla.
+  * **1980 · Configurar pedidos (XCON/R1):** sistema experto de reglas que configuraba las órdenes de computadoras VAX de Digital Equipment Corporation; uno de los primeros sistemas de IA con retorno económico documentado.
+  * **1984 · Síntesis de voz (DECtalk):** síntesis por formantes basada en reglas; fue la voz de Stephen Hawking. Primer punto del hilo "voz" que reaparece en 2022 (Whisper) y en los agentes de voz de la Slide 05.
+  * **1987 · Metro automático (Sendai, Japón):** control predictivo con lógica difusa para aceleración y frenado; más suave y eficiente que el operador humano.
+  * **1992 · Detección de fraude:** redes neuronales sobre patrones de transacciones de tarjetas de crédito; es la razón por la que el banco bloquea una compra sospechosa.
+  * **1996 · Lectura de cheques (LeNet):** red convolucional entrenada con *backpropagation* que leía montos manuscritos en millones de cheques al día; una de las primeras redes neuronales en producción masiva.
+  * **1998 · Recomendar productos (Amazon):** filtrado colaborativo ítem-a-ítem, escalable a millones de clientes.
+  * **~2002 · Filtro antispam:** clasificadores bayesianos ingenuos (*Naive Bayes*); propuestos en 1998 y adoptados masivamente a inicios de los 2000.
+  * **Excluidos deliberadamente:** MYCIN (famoso pero nunca usado clínicamente), Deep Blue/AlphaGo (hitos, no usos en producción).
 * **Fuentes Verificadas:**
-  1. **Turing, A. M. (1950).** *"Computing Machinery and Intelligence"*. **Mind**, 59(236), 433–460. Oxford University Press.
-  2. **McCarthy, J., Minsky, M. L., Rochester, N., & Shannon, C. E. (1955/2006).** *"A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence"*. **AI Magazine**, 27(4), 12–14.
-  3. **Rosenblatt, F. (1958).** *"The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain"*. **Psychological Review**, 65(6), 386–408. American Psychological Association.
-  4. **Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986).** *"Learning representations by back-propagating errors"*. **Nature**, 323(6088), 533–536.
+  1. **Turing, A. M. (1950).** *"Computing Machinery and Intelligence"*. **Mind**, 59(236), 433–460.
+  2. **Rosenblatt, F. (1958).** *"The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain"*. **Psychological Review**, 65(6), 386–408.
+  3. **Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986).** *"Learning representations by back-propagating errors"*. **Nature**, 323(6088), 533–536.
+  4. **McDermott, J. (1982).** *"R1: A Rule-Based Configurer of Computer Systems"*. **Artificial Intelligence**, 19(1), 39–88.
+  5. **Klatt, D. H. (1987).** *"Review of text-to-speech conversion for English"*. **The Journal of the Acoustical Society of America**, 82(3), 737–793.
+  6. **Yasunobu, S., & Miyamoto, S. (1985).** *"Automatic train operation system by predictive fuzzy control"*. En M. Sugeno (Ed.), **Industrial Applications of Fuzzy Control**, pp. 1–18. North-Holland.
+  7. **Ghosh, S., & Reilly, D. L. (1994).** *"Credit card fraud detection with a neural-network"*. **Proceedings of the 27th Hawaii International Conference on System Sciences (HICSS)**, Vol. 3, pp. 621–630. IEEE.
+  8. **LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998).** *"Gradient-based learning applied to document recognition"*. **Proceedings of the IEEE**, 86(11), 2278–2324.
+  9. **Linden, G., Smith, B., & York, J. (2003).** *"Amazon.com recommendations: Item-to-item collaborative filtering"*. **IEEE Internet Computing**, 7(1), 76–80.
+  10. **Sahami, M., Dumais, S., Heckerman, D., & Horvitz, E. (1998).** *"A Bayesian Approach to Filtering Junk E-Mail"*. **AAAI-98 Workshop on Learning for Text Categorization**, Technical Report WS-98-05.
+  11. **Haenlein, M., & Kaplan, A. (2019).** *"A Brief History of Artificial Intelligence: On the Past, Present, and Future of Artificial Intelligence"*. **California Management Review**, 61(4), 5–14. (Efecto IA.)
 
 ---
 
-#### Slide 03 — El Salto Exponencial: Capacidad Computacional y Algoritmos Optimizados
+#### Slides de Detalle por Hito — Patrón `Entrada → Modelo → Salida`
+* **Componentes:** [`TechScene.vue`](./components/TechScene.vue) (encabezado, foto opcional, franja de progreso) + [`IoPanels.vue`](./components/IoPanels.vue) (tres paneles) + una escena por hito en [`components/scenes/`](./components/scenes/). Animación por cuadros con [`utils/frameLoop.ts`](./utils/frameLoop.ts): solo corre con la diapositiva activa y muestra el cuadro final en exportación o con `prefers-reduced-motion`.
+* **Ubicación:** cada hito (incluida la teoría) tiene su slide de detalle justo después de su línea de tiempo, en orden cronológico. Presupuesto: 40–60 s por hito; tronco común total 30–45 min.
+* **Fotos históricas:** el campo `photo` en [`data/timelines.ts`](./data/timelines.ts) muestra un placeholder ([`PhotoSlot.vue`](./components/PhotoSlot.vue)) en Turing, Perceptrón, XCON, DECtalk, Sendai y LeNet. Antes de reemplazarlo con una imagen difuminada se debe verificar la licencia (dominio público o CC); el difuminado no elimina derechos de autor.
+* **Catálogo de escenas** (título en pantalla · mecanismo animado · fuente). Las referencias apuntan a la lista de fuentes de la Slide 02 (S02) o Slide 04 (S04). Donde se indica "ilustrativo", los valores muestran el mecanismo y no son mediciones.
+  * *Antes del salto (escriba, Etapa 1):*
+    1. **Turing (1950)** — "Turing propuso juzgar la inteligencia por la conducta" · pregunta → dos terminales ocultas → veredicto; la pregunta y la respuesta errónea 105621 son del artículo original · S02 ref. 1.
+    2. **Perceptrón (1958)** — "Una neurona artificial pondera entradas y decide" · entradas × pesos (0.6, 0.4, −0.5) → Σ → escalón θ = 0.5, cuatro casos calculados · S02 ref. 2.
+    3. **XCON (1980)** — "Reglas escritas por expertos configuraban cada pedido" · reglas SI → ENTONCES disparadas en secuencia arman el gabinete · S02 ref. 4.
+    4. **DECtalk (1984)** — "Reglas fonéticas convertían texto en voz sintética" · texto → fonemas → formantes F1–F3 (frecuencias aproximadas) → onda · S02 ref. 5.
+    5. **Backprop (1986)** — "El error viaja hacia atrás y ajusta los pesos" · pasada adelante (oro), error atrás (carmesí), error por iteración decreciente (ilustrativo) · S02 ref. 3.
+    6. **Sendai (1987)** — "La lógica difusa frenaba el metro con suavidad" · distancia → grados de pertenencia cerca/media/lejos → frenado gradual · S02 ref. 6.
+    7. **Fraude (1992)** — "Una red neuronal detecta compras fuera de patrón" · transacciones → red → puntaje de riesgo → aprobada/bloqueada (ilustrativo) · S02 ref. 7.
+    8. **LeNet (1996)** — "Una red convolucional lee dígitos manuscritos" · filtro 3x3 recorre un "7"; los cuatro mapas de características y el max-pooling se calculan de verdad sobre la matriz · S02 ref. 8.
+    9. **Amazon (1998)** — "Lo que otros compraron juntos guía la recomendación" · fila del ítem en el carrito en la matriz de similitud ítem-ítem (ilustrativo) · S02 ref. 9.
+    10. **Spam (~2002)** — "Cada palabra aporta evidencia para detectar spam" · palabras cargan una balanza; probabilidad posterior 50% → 97% · S02 ref. 10.
+  * *Después del salto (mago, Etapa 2):*
+    11. **Traducción neuronal (2016)** — "Una representación compartida traduce entre idiomas" · codificador → vector → decodificador · S04 ref. 1.
+    12. **Transformer (2017)** — "La atención conecta cada palabra con su contexto" · matriz de atención sobre "Me senté en el banco del parque"; "banco" se resuelve como asiento (pesos ilustrativos) · S04 ref. 2.
+    13. **Retina (2018)** — "Un sistema autónomo detecta retinopatía diabética" · fondo de ojo procedural → análisis por regiones → referir · S04 ref. 3.
+    14. **Night Sight (2018)** — "Fusionar ráfagas ruidosas revela la escena nocturna" · ráfaga alineada y promediada; el ruido baja con cada cuadro · S04 ref. 4.
+    15. **AlphaFold (2021)** — "Predecir la forma de una proteína desde su secuencia" · mapa de distancias refinado por iteraciones; la cadena se pliega (estructura ilustrativa) · S04 ref. 5.
+    16. **Chat (2022)** — "Un modelo de lenguaje predice el siguiente token" · candidatos con probabilidad, token por token: *"La capital de Guatemala es Ciudad de Guatemala."*; "Antigua" como candidato muestra que el modelo refleja patrones de datos (ilustrativo) · S04 ref. 6.
+    17. **Whisper (2022)** — "Whisper transcribe voz a texto vía espectrogramas" · onda → espectrograma → transformer → texto · S04 ref. 7.
+    18. **GraphCast (2023)** — "Una red de grafos pronostica el clima global" · malla con paso de mensajes; el sistema avanza en pasos de 6 h (mapa ilustrativo) · S04 ref. 8.
+    19. **Agentes de código (2024+)** — "Un agente itera: edita, prueba y corrige" · leer → editar → probar (falla) → editar → probar (pasa) → pull request · S04 ref. 9; Yao et al. (2023).
+
+---
+
+#### Slide 03 — El Salto Exponencial: Cómputo y Datos
+* **Componente:** [`components/ComputeChart.vue`](./components/ComputeChart.vue). `clicks: 2`. Bisagra entre ambas líneas de tiempo; el Transformer tiene su propia slide de detalle después de la Línea de Tiempo II.
 * **Afirmación Principal (En Slide — Texto Técnico):**
   * `.label`: `Parte I · El Salto Exponencial`
-  * `h1`: `Cómputo masivo + Atención Paralela = El salto exponencial`
-  * *Evidencia Visual:* Animación del `scribe` y el `mage` junto a una matriz de atención pixelada (`Self-Attention`) conectando tokens en paralelo sobre bloques de hardware GPU/TPU.
+  * `h1`: `Más cómputo y más datos desataron el salto`
+  * *Evidencia Visual:* Gráfica pixel en escala logarítmica del cómputo de entrenamiento (FLOP) 1950–2025. Inicio: tendencia lenta (×2 cada ~20 meses) con el Perceptrón · clic 1: tendencia rápida desde 2010 (×2 cada ~6 meses) con AlexNet y Transformer · clic 2: GPT-3 y 2023, el `mage` empuja la curva.
 * **Contexto Científico y Guion:**
-  * ¿Por qué ocurrió el salto exponencial hacia los Modelos de Lenguaje Natural (LLMs) recientemente si las redes neuronales existían desde hace décadas? Por tres pilares demostrados científicamente:
-    1. **La Lección Amarga (*The Bitter Lesson*):** Rich Sutton demostró que codificar heurísticas humanas a mano tiene un techo bajo; los métodos que escalan exponencialmente son aquellos algoritmos generales que aprovechan el crecimiento masivo del cómputo.
-    2. **La Arquitectura Transformer (2017):** A diferencia de las redes recurrentes (RNNs/LSTMs) que procesaban texto secuencialmente palabra por palabra, el Transformer introdujo el mecanismo matemático de **Auto-Atención ($\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$)**, permitiendo paralelizar el entrenamiento masivamente en clústeres de GPUs.
-    3. **Leyes de Escalamiento (*Scaling Laws*):** Kaplan et al. y Hoffmann et al. demostraron empíricamente que el error de predicción disminuye siguiendo una ley de potencias predecible al escalar en conjunto el cómputo ($C$), los datos ($D$) y los parámetros ($N$).
+  * ¿Por qué ocurrió el salto si las redes neuronales existían desde hace décadas? Las ideas de 1958 y 1986 eran correctas; faltaban cómputo y datos.
+    1. **Dos eras de cómputo:** antes de 2010 el cómputo de entrenamiento se duplicaba cada ~20 meses (ritmo de Moore); desde la era del aprendizaje profundo, cada ~6 meses.
+    2. **GPUs + datos masivos (2012):** AlexNet entrenada en GPUs sobre ImageNet marca el inicio del aprendizaje profundo en la industria.
+    3. **La Lección Amarga:** los métodos generales que escalan con el cómputo superan a las heurísticas codificadas a mano.
+    4. **Leyes de Escalamiento:** el error disminuye como ley de potencias al escalar cómputo, datos y parámetros.
+  * Los puntos de la gráfica son órdenes de magnitud aproximados (Perceptrón ~10^6 FLOP, AlexNet ~10^17.7, GPT-3 ~3×10^23).
 * **Fuentes Verificadas:**
-  1. **Sutton, R. S. (2019).** *"The Bitter Lesson"*. **Incomplete Ideas (University of Alberta / CIFAR)**, March 13, 2019.
-  2. **Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017).** *"Attention Is All You Need"*. **Advances in Neural Information Processing Systems (NeurIPS 2017)**, Vol. 30, pp. 5998–6008.
-  3. **Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., ... & Amodei, D. (2020).** *"Scaling Laws for Neural Language Models"*. **arXiv:2001.08361 / OpenAI Research**.
-  4. **Hoffmann, J., Borgeaud, S., Mensch, A., Buchatskaya, E., Cai, T., Rutherford, E., ... & Sifre, L. (2022).** *"Training Compute-Optimal Large Language Models"*. **Advances in Neural Information Processing Systems (NeurIPS 2022)**, Vol. 35, pp. 30016–30030.
+  1. **Sevilla, J., Heim, L., Ho, A., Besiroglu, T., Hobbhahn, M., & Villalobos, P. (2022).** *"Compute Trends Across Three Eras of Machine Learning"*. **2022 International Joint Conference on Neural Networks (IJCNN)**, IEEE, pp. 1–8.
+  2. **Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012).** *"ImageNet Classification with Deep Convolutional Neural Networks"*. **NeurIPS 2012**, Vol. 25, pp. 1097–1105.
+  3. **Brown, T. B., et al. (2020).** *"Language Models are Few-Shot Learners"*. **NeurIPS 2020**, Vol. 33, pp. 1877–1901. (Cómputo de GPT-3.)
+  4. **Sutton, R. S. (2019).** *"The Bitter Lesson"*. **Incomplete Ideas (University of Alberta)**. (Ensayo de autor; solo como cita de contexto.)
+  5. **Kaplan, J., et al. (2020).** *"Scaling Laws for Neural Language Models"*. **arXiv:2001.08361**.
+  6. **Hoffmann, J., et al. (2022).** *"Training Compute-Optimal Large Language Models"*. **NeurIPS 2022**, Vol. 35, pp. 30016–30030.
 
 ---
 
 ### SECCIÓN II: EL PRESENTE — Integraciones en el Mundo Real
 * **Sensación Visual y Animación:** Creación activa ("cocinar magia" de forma puramente visual: el caldero burbujeante y partículas enérgicas conectando el modelo con sistemas reales; energía potente pero propensa al desorden si no se controla).
 
-#### Slide 04 — Ecosistemas Actuales: Del Modelo Aislado a la Integración en Aplicaciones
+#### Slide 04 — Línea de Tiempo II: La IA como Infraestructura (2016–2024+)
+* **Componente:** [`components/AiTimeline.vue`](./components/AiTimeline.vue) con datos en [`data/timelines.ts`](./data/timelines.ts) (`TIMELINE_AFTER`). `clicks: 2`.
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Parte II · Estado Actual`
-  * `h1`: `De modelos de lenguaje aislados a sistemas integrados en producción`
-  * *Evidencia Visual:* Escena animada donde convergen entradas multimodales (Documentos, Audio, Código, Bases de Datos) y se distribuyen hacia arquitecturas empresariales reales.
+  * `.label`: `Parte II · Adopción Masiva`
+  * `h1`: `Desde 2016, la IA es infraestructura`
+  * *Evidencia Visual:* Misma gramática visual que la Slide 02; colores `--vermilion` (aprendizaje profundo) y `--crimson` (modelos fundacionales). Las tarjetas fundacionales emiten chispas pixel desordenadas (volatilidad, Etapa 2). El `mage` cierra el eje con su orbe.
+  * *Revelado:* inicio = 2016–2018 + Transformer · clic 1 = 2021–2022 · clic 2 = 2023–2024.
 * **Contexto Científico y Guion:**
-  * Hoy la IA dejó de ser un simple chat aislado. En la industria actual conectamos los modelos fundacionales con bases de conocimiento empresariales, telefonía en tiempo real, repositorios de código y motores de análisis de datos.
+  * **2016 · Traducción neuronal:** Google reemplaza su traductor estadístico por un sistema neuronal; un solo modelo traduce entre múltiples idiomas, incluso pares nunca vistos (*zero-shot*).
+  * **2017 · Transformer:** arquitectura base de todo lo que sigue (ver Slide 03).
+  * **2018 · Diagnóstico retinal:** primer sistema de diagnóstico autónomo autorizado por la FDA (retinopatía diabética), sin necesidad de un especialista que interprete la imagen.
+  * **2018 · Fotografía nocturna:** el modo noche de los teléfonos fusiona ráfagas de fotos con aprendizaje automático; cada foto nocturna es calculada, no solo capturada.
+  * **2021 · Plegado proteico (AlphaFold):** predicción de estructuras de proteínas con precisión experimental; Premio Nobel de Química 2024.
+  * **2022 · Asistentes de chat:** modelos de lenguaje alineados con retroalimentación humana (RLHF) llegan al público masivo.
+  * **2022 · Voz a texto (Whisper):** reconocimiento de voz robusto y multilingüe; segundo punto del hilo "voz" iniciado con DECtalk (1984).
+  * **2023 · Pronóstico climático (GraphCast):** supera al sistema numérico de referencia del ECMWF en la mayoría de variables a 10 días; ECMWF opera su propio modelo de IA (AIFS) desde 2025.
+  * **2024+ · Agentes de código:** agentes que resuelven *issues* reales de GitHub; puente directo a las Slides 05 y 06.
 * **Fuentes Verificadas:**
-  1. **Bommasani, R., et al. (2021).** *"On the Opportunities and Risks of Foundation Models"*. **Stanford CRFM**, arXiv:2108.07258.
-  2. **Mialon, G., et al. (2023).** *"Augmented Language Models: a Survey"*. **Transactions on Machine Learning Research (TMLR)**.
+  1. **Johnson, M., et al. (2017).** *"Google's Multilingual Neural Machine Translation System: Enabling Zero-Shot Translation"*. **Transactions of the Association for Computational Linguistics (TACL)**, 5, 339–351.
+  2. **Vaswani, A., et al. (2017).** *"Attention Is All You Need"*. **NeurIPS 2017**, Vol. 30.
+  3. **Abràmoff, M. D., Lavin, P. T., Birch, M., Shah, N., & Folk, J. C. (2018).** *"Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices"*. **npj Digital Medicine**, 1, 39.
+  4. **Liba, O., et al. (2019).** *"Handheld Mobile Photography in Very Low Light"*. **ACM Transactions on Graphics (SIGGRAPH Asia 2019)**, 38(6), Article 164.
+  5. **Jumper, J., et al. (2021).** *"Highly accurate protein structure prediction with AlphaFold"*. **Nature**, 596, 583–589.
+  6. **Ouyang, L., et al. (2022).** *"Training language models to follow instructions with human feedback"*. **Advances in Neural Information Processing Systems (NeurIPS 2022)**, Vol. 35, pp. 27730–27744.
+  7. **Radford, A., et al. (2023).** *"Robust Speech Recognition via Large-Scale Weak Supervision"*. **Proceedings of the 40th International Conference on Machine Learning (ICML 2023)**, PMLR 202:28492–28518.
+  8. **Lam, R., et al. (2023).** *"Learning skillful medium-range global weather forecasting"*. **Science**, 382(6677), 1416–1421.
+  9. **Jimenez, C. E., et al. (2024).** *"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"*. **International Conference on Learning Representations (ICLR 2024)**.
+  10. **Bommasani, R., et al. (2021).** *"On the Opportunities and Risks of Foundation Models"*. **Stanford CRFM**, arXiv:2108.07258. (Definición de "modelo fundacional".)
 
 ---
 
-#### Slide 05 — Aplicaciones en QA, Chats (RAG) y Agentes de Llamadas Inbound/Outbound (STT + TTS)
+#### Slide 05 — Las Piezas se Combinan: RAG y Agentes de Voz
+* **Componente:** [`components/SystemPipelines.vue`](./components/SystemPipelines.vue).
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Parte II · Comunicación y Conocimiento`
-  * `h1`: `Sistemas de QA/Chats con RAG y Agentes de Voz (STT + LLM + TTS)`
-  * *Evidencia Visual:* Diagrama dual en pixel-art:
-    * **Panel Izquierdo (QA y Chats):** `Consulta -> Búsqueda Vectorial (RAG) -> Respuesta Verificada`.
-    * **Panel Derecho (Llamadas Inbound/Outbound):** `Voz Entrante -> STT -> Procesamiento LLM -> Síntesis TTS`.
+  * `.label`: `Parte II · Sistemas Actuales`
+  * `h1`: `Las piezas se combinan en sistemas`
+  * *Evidencia Visual:* Dos tuberías horizontales con los mismos íconos de la línea de tiempo; un paquete recorre cada etapa y el LLM es el caldero (Etapa 2):
+    * **RAG:** `Pregunta → Búsqueda → Documentos → LLM → Respuesta con fuentes`.
+    * **Agente de voz:** `Voz → STT (2022) → LLM → TTS (1984 →) → Voz` — cierra el hilo de voz DECtalk/Whisper.
 * **Contexto Científico y Guion:**
-  * **Integraciones en Aplicaciones para QA y Chats (RAG):** Mediante *Retrieval-Augmented Generation*, las aplicaciones consultan documentación técnica, bases de datos y casos de prueba en tiempo real antes de responder, reduciendo alucinaciones.
-  * **Agentes de Llamadas Inbound y Outbound (STT + TTS):** Automatización de atención al cliente (inbound) y seguimiento/notificaciones (outbound) combinando reconocimiento automático de voz robusto (**STT** como Whisper), razonamiento de baja latencia y síntesis de voz neuronal (**TTS**).
+  * **RAG:** la aplicación busca en documentación propia antes de responder y cita la fuente, reduciendo alucinaciones.
+  * **Agentes de llamadas inbound y outbound:** reconocimiento de voz robusto (STT), razonamiento del LLM y síntesis neuronal (TTS).
 * **Fuentes Verificadas:**
-  1. **Lewis, P., et al. (2020).** *"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"*. **Advances in Neural Information Processing Systems (NeurIPS 2020)**, Vol. 33, pp. 9459–9474.
-  2. **Radford, A., et al. (2023).** *"Robust Speech Recognition via Large-Scale Weak Supervision"*. **Proceedings of the 40th International Conference on Machine Learning (ICML 2023)**, PMLR 202:28492–28518.
+  1. **Lewis, P., et al. (2020).** *"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"*. **NeurIPS 2020**, Vol. 33, pp. 9459–9474.
+  2. **Radford, A., et al. (2023).** *"Robust Speech Recognition via Large-Scale Weak Supervision"*. **ICML 2023**, PMLR 202:28492–28518.
   3. **Wang, C., et al. (2023).** *"Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers"*. **IEEE/ACM Transactions on Audio, Speech, and Language Processing**.
 
 ---
 
-#### Slide 06 — Agentes de Programación, Automatización de Procesos y Minería de Datos
+#### Slide 06 — Agentes que Actúan sobre Sistemas Reales
+* **Componente:** [`components/AgentHub.vue`](./components/AgentHub.vue). El agente de código tiene su slide de detalle; esta generaliza a automatización y datos.
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Parte II · Código, Procesos y Datos`
-  * `h1`: `Agentes de código, automatización de flujos y decisiones con minería de datos`
-  * *Evidencia Visual:* Tres módulos visuales animados representando:
-    1. **Agentes en Programación:** Navegación de código, edición multi-archivo y ejecución de pruebas.
-    2. **Automatizaciones:** Orquestación de APIs y servicios externos (*ReAct Loop*).
-    3. **Decisiones Empresariales:** Análisis estadístico, *Text-to-SQL* y minería de datos.
+  * `.label`: `Parte II · Automatización y Datos`
+  * `h1`: `Agentes que actúan sobre sistemas reales`
+  * *Evidencia Visual:* El `mage` y el caldero al centro disparan acciones hacia cinco herramientas (API, Base de datos, Correo, Tickets, Reportes). Unas aciertan (sage), otras fallan (carmesí); un marcador acumula aciertos y fallos. Prepara visualmente la Slide 07.
 * **Contexto Científico y Guion:**
-  * **Agentes Especializados en Código:** Integración directa en el ciclo de desarrollo de software para resolver *issues*, refactorizar módulos y generar pruebas.
-  * **Automatizaciones:** Ejecución autónoma de acciones sobre sistemas empresariales mediante uso de herramientas (*Tool Use*).
-  * **Decisiones Empresariales (Análisis y Minería de Datos):** Extracción de patrones, generación de consultas analíticas sobre grandes volúmenes de datos y soporte a la toma de decisiones estratégicas.
+  * Con uso de herramientas (*Tool Use*) el modelo ejecuta acciones: llama APIs, consulta bases de datos con Text-to-SQL, envía correos, crea tickets y genera reportes para la toma de decisiones.
+  * Un agente actúa con la misma confianza cuando acierta que cuando falla: sin dirección, el poder se vuelve volátil.
 * **Fuentes Verificadas:**
-  1. **Yao, S., et al. (2023).** *"ReAct: Synergizing Reasoning and Acting in Language Models"*. **International Conference on Learning Representations (ICLR 2023)**.
-  2. **Jimenez, C. E., et al. (2024).** *"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?"*. **International Conference on Learning Representations (ICLR 2024)**.
-  3. **Schick, T., et al. (2023).** *"Toolformer: Language Models Can Teach Themselves to Use Tools"*. **Advances in Neural Information Processing Systems (NeurIPS 2023)**, Vol. 36.
-  4. **Li, J., et al. (2023).** *"Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (BIRD)"*. **Advances in Neural Information Processing Systems (NeurIPS 2023)**, Vol. 36.
+  1. **Yao, S., et al. (2023).** *"ReAct: Synergizing Reasoning and Acting in Language Models"*. **ICLR 2023**.
+  2. **Schick, T., et al. (2023).** *"Toolformer: Language Models Can Teach Themselves to Use Tools"*. **NeurIPS 2023**, Vol. 36.
+  3. **Li, J., et al. (2023).** *"Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (BIRD)"*. **NeurIPS 2023**, Vol. 36.
 
 ---
 
 ### SECCIÓN III: EL FUTURO — Dirección de Orquesta, *Taste* y Dominio de Fundamentos
 * **Sensación Visual y Animación:** Orden, control consciente y dirección estructurada (animaciones sincronizadas y limpias bajo el control de los personajes).
 
-#### Slide 07 — El Ingeniero como Director de Orquesta: Buen Gusto (*Taste*), Seguridad y Fundamentos
+#### Slide 07 — Nuestro Rol: Dirigir con Criterio
+* **Componente:** [`components/Orchestra.vue`](./components/Orchestra.vue).
 * **Afirmación Principal (En Slide — Texto Técnico):**
   * `.label`: `Parte III · El Futuro de la Profesión`
-  * `h1`: `Ser directores de orquesta: criterio técnico, seguridad y dominio de fundamentos`
-  * *Evidencia Visual:* Diagrama arquitectónico donde las especificaciones humanas (**Mockups, Guías de Diseño, Contratos y Fundamentos**) dirigen y filtran la salida de múltiples agentes hacia un sistema seguro y modular.
+  * `h1`: `Nuestro rol: dirigir con criterio`
+  * *Evidencia Visual:* Las chispas dispersas de la Slide 06 (carmesí/bermellón) atraviesan cuatro guías — Especificación, Mockups, Pruebas, Fundamentos — y se alinean en una cuadrícula ordenada (oro → sage), dirigidas por el `scribe` y el `mage` juntos.
 * **Contexto Científico y Guion:**
-  * El futuro del ingeniero en Ciencias y Sistemas no consiste en competir tecleando código repetitivo, sino en asumir el rol de **Director de Orquesta**:
-    1. **Buen Gusto (*Engineering Taste*) al Codificar:** Saber diferenciar una buena implementación arquitectónica de una solución mediocre o frágil.
-    2. **Detección Anticipada de Problemas de Seguridad y Módulos Rotos:** Identificar vulnerabilidades y acoplamientos críticos antes de que lleguen a producción. El estudio de Stanford (Perry et al.) probó que sin criterio sólido, los desarrolladores que usan asistentes de IA escriben código significativamente más inseguro mientras sufren de exceso de confianza.
-    3. **Guiar a la IA con Diseños Predefinidos, Mockups y Guías Claras:** Aportar planos arquitectónicos, mockups visuales y especificaciones formales para llevar a la IA exactamente hacia la solución deseada.
-    4. **Conocer a Fondo los Fundamentos y Herramientas fuera de la IA:** Para dirigir la orquesta e identificar qué módulo está roto, primero es indispensable comprender cómo funciona cada herramienta, protocolo, estructura de datos y lenguaje sin depender de la IA.
+  * El rol del ingeniero es el de **Director de Orquesta**:
+    1. **Buen Gusto (*Engineering Taste*):** distinguir una implementación sólida de una frágil.
+    2. **Detección anticipada de fallos de seguridad y módulos rotos:** sin criterio, quienes usan asistentes de IA escriben código más inseguro y confían más en él (Perry et al.).
+    3. **Guiar a la IA con especificaciones, mockups y pruebas.**
+    4. **Dominar los fundamentos y herramientas fuera de la IA.**
 * **Fuentes Verificadas:**
-  1. **Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023).** *"Do Users Write More Insecure Code with AI Assistants?"*. **Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security (ACM CCS 2023)**, pp. 2785–2799.
-  2. **Tankelevitch, L., et al. (2024).** *"The Metacognitive Demands and Opportunities of Generative AI"*. **Proceedings of the CHI Conference on Human Factors in Computing Systems (ACM CHI 2024)** (*Best Paper*).
+  1. **Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023).** *"Do Users Write More Insecure Code with AI Assistants?"*. **ACM CCS 2023**, pp. 2785–2799.
+  2. **Tankelevitch, L., et al. (2024).** *"The Metacognitive Demands and Opportunities of Generative AI"*. **ACM CHI 2024** (*Best Paper*).
   3. **Brooks, F. P. (1987).** *"No Silver Bullet—Essence and Accidents of Software Engineering"*. **IEEE Computer**, 20(4), 10–19.
 
 ---

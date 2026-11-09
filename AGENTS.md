@@ -54,10 +54,27 @@ PresentacionIAUnaVisionAlFuturo/
 │   ├── 02-camino-manana.md     # Ruta Matutina: 1er Año (`routeAlias: camino-manana` en su primera slide)
 │   └── 03-camino-tarde.md      # Ruta Vespertina: Años Superiores (`routeAlias: camino-tarde` en su primera slide)
 ├── components/                 # Componentes Vue 3 auto-importados por Slidev
+│   ├── AiTimeline.vue          # Línea de tiempo pixel-art (teoría arriba, aplicaciones abajo) revelada por clics
+│   ├── TechScene.vue           # Slide de detalle por hito: encabezado, foto opcional y franja de progreso
+│   ├── IoPanels.vue            # Tres paneles Entrada → Modelo → Salida
+│   ├── PhotoSlot.vue           # Foto histórica difuminada o placeholder
+│   ├── PixelArt.vue            # Matriz ASCII → SVG RLE genérico
+│   ├── PixelCauldron.vue       # Caldero animado (Etapa 2, modelos fundacionales)
+│   ├── scenes/                 # Una escena animada por hito (19: SceneTuring … SceneAgentes)
+│   ├── PixelNet.vue            # Red neuronal pixel con propagación adelante/atrás
+│   ├── ComputeChart.vue        # Gráfica log del cómputo de entrenamiento (El Salto Exponencial)
+│   ├── SystemPipelines.vue     # Tuberías RAG y agente de voz (Slide 05)
+│   ├── AgentHub.vue            # Agente con herramientas, aciertos y fallos (Slide 06)
+│   ├── Orchestra.vue           # Del caos al orden a través de guías (Slide 07)
 │   ├── PathFork.vue            # Selector interactivo en "El Cruce de Caminos" (único lugar con alegoría escrita)
 │   ├── PixelCharacter.vue      # Motor de sprites 16x20 con compresión RLE y animación CSS steps()
 │   ├── PixelIcon.vue           # Motor de íconos 8x8 en currentColor
 │   └── QrCode.vue              # Generador SVG vectorial pixel-perfect para códigos QR
+├── utils/
+│   ├── frameLoop.ts            # Contador de cuadros para escenas (pausa fuera de la slide, cuadro final al exportar)
+│   └── pixel.ts                # Bresenham, PRNG determinista y escala de calor en paleta
+├── data/
+│   └── timelines.ts            # Hitos de las líneas de tiempo del tronco común (Slides 02 y 04)
 ├── public/                     # Assets estáticos servidos en la raíz '/'
 │   └── portraits/              # Retratos de los expositores con dithering Bayer/Atkinson
 │       ├── left.png            # Fernando Rodríguez (variante color)

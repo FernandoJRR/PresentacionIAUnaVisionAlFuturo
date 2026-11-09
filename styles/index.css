@@ -222,3 +222,21 @@ h1, h2, h3 { font-family: 'VT323', monospace; letter-spacing: 0.02em; }
   top: 12px;
   background: repeating-conic-gradient(var(--oxblood) 0 25%, transparent 0 50%) 0 0 / 6px 6px;
 }
+
+/* Timeline slides */
+.slidev-layout.timeline-slide .label {
+  color: var(--brick);
+}
+
+.slidev-layout.timeline-slide h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0.25rem 0 0;
+  text-shadow: 3px 3px 0 var(--vellum);
+}
+
+.slidev-layout.timeline-slide,
+.slidev-layout.tech-slide {
+  display: flex;
+  flex-direction: column;
+}
