@@ -11,8 +11,8 @@ const frame = useFrameLoop(13, 600)
 
 const typing = computed(() => frame.value >= 1 && frame.value <= 3)
 const dots = computed(() => '.'.repeat((frame.value % 3) + 1))
-const answerA = computed(() => frame.value >= 4)
-const answerB = computed(() => frame.value >= 5)
+const answerA = computed(() => frame.value >= 5)
+const answerB = computed(() => frame.value >= 1)
 const pick = computed(() => (frame.value >= 6 && frame.value < 12 ? (frame.value % 2 ? 'A' : 'B') : null))
 </script>
 
