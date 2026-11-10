@@ -1,0 +1,125 @@
+// Grids ASCII para props del taller/biblioteca pixel-art (usados con PixelArt.vue).
+// Paleta estándar de PixelArt.vue:
+// K: --ink | C: --crimson | O: --oxblood | R: --vermilion | Y: --gold
+// V: --vellum | S: --sage | I: --iron | B: --card | M: --muted
+
+// Pergamino de especificación (16x16)
+export const SCROLL_GRID = [
+  '..KKKKKKKKKKKK..',
+  '.KYYYYYYYYYYYYK.',
+  '.KOOOOOOOOOOOOK.',
+  '..KBBBBBBBBBBK..',
+  '..KBKKKKKBBYBK..',
+  '..KBBBBBBBBBBK..',
+  '..KBKKKKKKKBBK..',
+  '..KBBBBBBBBBBK..',
+  '..KBKKKKBBBBBK..',
+  '..KBBBBBBBBBBK..',
+  '..KBKKKKKKBBBK..',
+  '..KBBBBBBBBBBK..',
+  '..KBBBBBBBBCCK..',
+  '.KOOOOOOOOOCCCK.',
+  '.KYYYYYYYYYCCK..',
+  '..KKKKKKKKKKKK..',
+]
+
+// Atril con libro de reglas abierto (20x20)
+export const LECTERN_GRID = [
+  '....................',
+  '..KKKKKKK..KKKKKKK..',
+  '.KBBBBBBBKKBBBBBBBK.',
+  '.KBKKKKBBKKBBKKKKBK.',
+  '.KBBBBBBBKKBBBBBBBK.',
+  '.KBKKKKBBKKBBYYYYBK.',
+  '.KBBBBBBBKKBBBBBBBK.',
+  '.KBYYYYBBKKBBKKKKBK.',
+  '.KBBBBBBBKKBBBBBBBK.',
+  '..KKKKKKKKKKKKKKKK..',
+  '.KYYYYYYYYYYYYYYYYK.',
+  '....KOOOOOOOOOOK....',
+  '......KOOOOOOK......',
+  '.......KOOOOOK......',
+  '.......KOOOOOK......',
+  '.......KYYYYYK......',
+  '......KOOOOOOOK.....',
+  '....KKOOOOOOOOOKK...',
+  '...KIIIIIIIIIIIIIK..',
+  '...KKKKKKKKKKKKKKK..',
+]
+
+// Libro individual vertical para estantería (10x14) — usa 'A' como color principal configurable
+export const BOOK_TOMO_GRID = [
+  '.KKKKKKKK.',
+  'KAAAAAAAAK',
+  'KAYYYYYYAK',
+  'KAAAAAAAAK',
+  'KAAKKKKAAK',
+  'KAABBBBAAK',
+  'KAAKKKKAAK',
+  'KAAAAAAAAK',
+  'KAAAAAAAAK',
+  'KAYYYYYYAK',
+  'KAAAAAAAAK',
+  'KBBBBBBBBK',
+  'KAAAAAAAAK',
+  '.KKKKKKKK.',
+]
+
+// Libro hinchado / desbordado para comandas.controller.ts 238 LOC (18x15)
+export const BLOATED_BOOK_GRID = [
+  '..KKKKKKKKKKKKKK..',
+  '.KCCCCCCCCCCCCCCK.',
+  'KCCYYYYYYYYYYYYCCK',
+  'KCCCCCCCCCCCCCCCCK',
+  'KCCRRRRRRRRRRRRCCK',
+  'KCCRBBBBBBBBBBRCCK',
+  'KCCRKKKKKKKKKKRCCK',
+  'KCCRBBBBBBBBBBRCCK',
+  'KCCRRRRRRRRRRRRCCK',
+  'KCCCCCCCCCCCCCCCCK',
+  'KCCYYYYYYYYYYYYCCK',
+  'KCCCCCCCCCCCCCCCCK',
+  '.KBBBBBBBBBBBBBBK.',
+  '.KCCCCCCCCCCCCCCK.',
+  '..KKKKKKKKKKKKKK..',
+]
+
+// Megatomo colosal (Monolito Determinista: restaurant.controller + service) (28x18)
+export const MEGA_TOME_GRID = [
+  '..KKKKKKKKKKKKKKKKKKKKKKKK..',
+  '.KYYYYYYYYYYYYYYYYYYYYYYYYK.',
+  'KYYOOOOOOOOOOOOOOOOOOOOOOYYK',
+  'KYOOYYYYYYYYYYYYYYYYYYYYOOYK',
+  'KYOOBBBBBBBBBBBBBBBBBBBBOOYK',
+  'KYOOBKKKKKBBBBBBBBKKKKKBOOYK',
+  'KYOOBBBBBBBBBBBBBBBBBBBBOOYK',
+  'KYOOBKKKKKKKKKKKKKKKKKKBOOYK',
+  'KYOOBBBBBBBBBBBBBBBBBBBBOOYK',
+  'KYOOBKKKKKBBBBBBBBKKKKKBOOYK',
+  'KYOOBBBBBBBBBBBBBBBBBBBBOOYK',
+  'KYOOYYYYYYYYYYYYYYYYYYYYOOYK',
+  'KYYOOOOOOOOOOOOOOOOOOOOOOYYK',
+  'KYYIIIIIIIIIIIIIIIIIIIIIIYYK',
+  '.KBBBBBBBBBBBBBBBBBBBBBBBBK.',
+  '.KYYYYYYYYYYYYYYYYYYYYYYYYK.',
+  '..KKKKKKKKKKKKKKKKKKKKKKKK..',
+  '............................',
+]
+
+// Cilindro / Barril de Base de Datos (14x14)
+export const DB_BARREL_GRID = [
+  '..KKKKKKKKKK..',
+  '.KYYYYYYYYYYK.',
+  'KOOOOOOOOOOOOK',
+  'KKKKKKKKKKKKKK',
+  'KIIIIIIIIIIIIK',
+  'KIIYYYYYYYYIIK',
+  'KKKKKKKKKKKKKK',
+  'KIIIIIIIIIIIIK',
+  'KIIYYYYYYYYIIK',
+  'KKKKKKKKKKKKKK',
+  'KOOOOOOOOOOOOK',
+  '.KYYYYYYYYYYK.',
+  '..KKKKKKKKKK..',
+  '..............',
+]

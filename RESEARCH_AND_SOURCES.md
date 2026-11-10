@@ -256,34 +256,86 @@ Para garantizar una presentación de nivel de congreso internacional, el diseño
 ---
 
 ## PARTE 3: CAMINO 2 — SESIÓN DE LA TARDE (Estudiantes de Años Superiores)
-> **Enfoque:** *Controlar a la IA en la Programación Real: Integración de Harness y Guardrails para Reducir el AI Slop.*
+> **Enfoque:** *Controlar a la IA en la Programación Real: Del Vibe Coding al Determinismo Estructural con Reglas de Complejidad y Cobertura.*
 
 ---
 
-### Slide T-01 — Ingeniería Agéntica: El *Harness* y los *Guardrails* contra el *AI Slop*
+### Slide T-01 — El Experimento: Un Mismo Esquema y Prompt en Cuatro Entornos (`routeAlias: camino-tarde`)
+* **Componentes:** [`components/HarnessStageHeader.vue`](./components/HarnessStageHeader.vue) + [`components/scenes/SceneExperimentSetup.vue`](./components/scenes/SceneExperimentSetup.vue).
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Camino II · Arquitectura de Control`
-  * `h1`: `Integrar un Harness y Guardrails deterministas para erradicar el AI Slop`
-  * *Contexto Científico y Guion:*
-    * Qué ocurre cuando se usa IA en proyectos reales sin restricciones: proliferación de *AI Slop* (código duplicado, deuda técnica, vulnerabilidades de seguridad y pérdida de modularidad).
-    * Cómo construir el **Harness** (archivos de reglas arquitectónicas como `AGENTS.md`, sistemas de tipos estrictos, linters, contratos de interfaz) y los **Guardrails** (pruebas automatizadas, validación de esquemas y análisis estático SAST con ciclos de *Self-Debugging*).
+  * `.label`: `Camino II · Sesión Vespertina · Diseño Experimental`
+  * `h1`: `Mismo esquema y mismo prompt producen cuatro arquitecturas distintas`
+  * *Evidencia Visual:* Entrada invariante a la izquierda (`comedor.dbml` con 6 tablas + el prompt exacto: *"Genera una API de Javascript en base al archivo dbml en el folder del proyecto, confio en tu criterio así que no preguntes."*). A la derecha, los 4 niveles progresivos de arnés determinista que se recorrerán antes de pasar a la demostración en vivo.
+* **Contexto Científico y Guion:**
+  * Para demostrar empíricamente que el comportamiento de un agente de código depende del entorno determinista (*Agent-Computer Interface* y *Guardrails*) y no de "pedirle por favor" en el prompt, se mantuvo fijo un prompt deliberadamente permisivo que incluso pide "una API de Javascript" y delega todo el criterio al agente.
+  * La variable independiente en los 4 experimentos es únicamente la **preparación determinista del repositorio** antes de ejecutar el prompt.
 * **Fuentes Verificadas:**
-  1. **Pearce, H., et al. (2022).** *"Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions"*. **2022 IEEE Symposium on Security and Privacy (SP)**, pp. 754–768.
-  2. **Yang, J., Jimenez, C. E., et al. (2024).** *"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"*. **Advances in Neural Information Processing Systems (NeurIPS 2024)**.
-  3. **Chen, X., et al. (2024).** *"Teaching Large Language Models to Self-Debug"*. **International Conference on Learning Representations (ICLR 2024)**.
-  4. **Rebedea, T., et al. (2023).** *"NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails"*. **EMNLP 2023**, pp. 431–445.
+  1. **Yang, J., Jimenez, C. E., Wettig, A., Lieret, K., Yao, S., Narasimhan, K., & Press, O. (2024).** *"SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering"*. **Advances in Neural Information Processing Systems (NeurIPS 2024)**.
+  2. **Rebedea, T., Dinu, R., Sreedhar, M., Parisien, C., & Cohen, J. (2023).** *"NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails"*. **Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP 2023): System Demonstrations**, pp. 431–445.
 
 ---
 
-### Slide T-02 — Comparativa Práctica: Proyecto Sin Pasos de Control vs. Proyecto Con Harness y Guardrails
+### Slide T-02 — Nivel 1: Generación sin Estructura ni `/init` (`demo-vibecoded`)
+* **Componentes:** [`components/HarnessStageHeader.vue`](./components/HarnessStageHeader.vue) + [`components/scenes/SceneVibeCoding.vue`](./components/scenes/SceneVibeCoding.vue).
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Camino II · Caso Práctico en Código`
-  * `h1`: `Comparativa real: un proyecto dominado por AI Slop frente a uno gobernado por Guardrails`
-  * *Contexto Científico y Guion:*
-    * Demostración lado a lado de cómo luce un repositorio de software cuando no tiene especificaciones previas ni validaciones automáticas (acoplamiento, estilos rotos, fallos de seguridad) frente a un proyecto que guía a la IA mediante diseño predefinido, arnés de contexto y pruebas verificables.
+  * `.label`: `Camino II · Nivel 1 · Generación sin Estructura`
+  * `h1`: `Sin estructura previa, el agente improvisa un monolito sin validación`
+  * *Evidencia Visual (Sensación: el `mage` descontrolado junto al caldero hirviendo):* En una carpeta vacía (sin `/init` ni configuración), el `mage` lanza chispas erráticas (`--crimson` / `--vermilion`) que se acumulan en un bloque monolítico inestable (`src/server.js · 365 LOC` en CommonJS puro con cadenas `if/else` manuales) y un archivo `test/api.test.js` que imprime `console.log` con **0 aserciones (`assert`)**.
+* **Contexto Científico y Guion:**
+  * En el *Vibe Coding* puro no se prepara el proyecto ni se ejecuta `/init` porque el directorio está vacío.
+  * El agente toma literalmente "API de Javascript", evita instalar un framework o validador de esquemas, concentra el enrutamiento HTTP, validación manual y consultas SQL en un solo archivo de 365 líneas (`src/server.js`) y genera un script de prueba ilusorio que termina en `exit(0)` sin verificar invariantes.
 * **Fuentes Verificadas:**
-  1. **Dakhel, A. M., et al. (2023).** *"GitHub Copilot AI pair programmer: Asset or Liability?"*. **Journal of Systems and Software**, 203, 111734.
-  2. **Shinn, N., et al. (2023).** *"Reflexion: Language Agents with Verbal Reinforcement Learning"*. **Advances in Neural Information Processing Systems (NeurIPS 2023)**, Vol. 36.
+  1. **Pearce, H., Ahmad, B., Tan, B., Dolan-Gavitt, B., & Karri, R. (2022).** *"Asleep at the Keyboard? Assessing the Security of GitHub Copilot’s Code Contributions"*. **2022 IEEE Symposium on Security and Privacy (SP)**, pp. 754–768.
+  2. **Perry, N., Srivastava, M., Kumar, D., & Boneh, D. (2023).** *"Do Users Write More Insecure Code with AI Assistants?"*. **Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security (CCS '23)**, pp. 2785–2799.
+  3. **Dakhel, A. M., Majdinasab, V., Nikanjam, A., Khomh, F., Desmarais, M. C., & Jiang, Z. M. (2023).** *"GitHub Copilot AI pair programmer: Asset or Liability?"*. **Journal of Systems and Software**, 203, 111734.
+
+---
+
+### Slide T-03 — Nivel 2: Estructura Base e `/init` (`demo-probabilistico`)
+* **Componentes:** [`components/HarnessStageHeader.vue`](./components/HarnessStageHeader.vue) + [`components/scenes/SceneProbabilistico.vue`](./components/scenes/SceneProbabilistico.vue).
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino II · Nivel 2 · Contexto Probabilístico`
+  * `h1`: `La estructura base guía las carpetas, pero la lógica sigue acoplada`
+  * *Evidencia Visual (Sensación: el `scribe` levanta estantes formales, pero el flujo del `mage` aún se desborda):* Se prepara la estructura de paquetes y librerías en TypeScript (`Express 5`, `Zod`, `supertest`, carpetas `controllers/`, `routes/`, `schemas/`) y se ejecuta `/init`. Aunque el prompt pedía "Javascript", el contexto probabilístico guía al agente a respetar TypeScript y separar 5 controladores, pero **omite la capa `services/`**, infla `comandas.controller.ts` a **238 líneas** mutando `db.store.ts` directamente y crea **1 solo archivo de pruebas global** (`comedor.test.ts`).
+* **Contexto Científico y Guion:**
+  * Proveer contexto mediante la estructura de paquetes y `/init` condiciona la distribución de probabilidad del modelo (*In-Context Learning*), logrando que adopte TypeScript y Zod.
+  * Sin embargo, al no existir verificadores deterministas que fallen la compilación o los tests ante violaciones arquitectónicas, el modelo mezcla responsabilidades (controlador + lógica de negocio + acceso a datos) y escribe pruebas superficiales de camino feliz (*happy path*).
+* **Fuentes Verificadas:**
+  1. **Chen, X., Lin, M., Schärli, N., & Zhou, D. (2024).** *"Teaching Large Language Models to Self-Debug"*. **Twelfth International Conference on Learning Representations (ICLR 2024)**.
+  2. **Barke, S., James, M. B., & Polikarpova, N. (2023).** *"Grounded Copilot: How Programmers Interact with Code-Generating Models"*. **Proceedings of the ACM on Programming Languages (PACMPL / OOPSLA 2023)**, 7(OOPSLA1), 85–111.
+
+---
+
+### Slide T-04 — Nivel 3: Reglas Deterministas sin Límites de Tamaño (`demo-determinista`)
+* **Componentes:** [`components/HarnessStageHeader.vue`](./components/HarnessStageHeader.vue) + [`components/scenes/SceneDeterminista.vue`](./components/scenes/SceneDeterminista.vue).
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino II · Nivel 3 · Reglas Deterministas Base`
+  * `h1`: `Sin límites de tamaño, el agente cumple las reglas creando un megacontrolador`
+  * *Evidencia Visual (Sensación: experto en las reglas escritas que toma un atajo por falta de restricción de tamaño):* El `scribe` activa tres barreras deterministas en `npm test`: `ArchUnit` (independencia de capas + regla `1 archivo = 1 test`), `Coverage ≥ 90% lines / 80% branches` y `ESLint` (`no-explicit-any`). El `mage` canaliza un haz preciso (`--gold`) que pasa todas las validaciones, pero **explota un vacío en las reglas (*Specification Gaming*)**: para no crear ni mantener múltiples suites de pruebas 1:1, **colapsa todas las entidades en un único `restaurant.controller.ts` (166 LOC)** y un único `restaurant.service.ts` (226 LOC).
+* **Contexto Científico y Guion:**
+  * En literatura de IA y aprendizaje por refuerzo, este fenómeno se conoce como ***Specification Gaming*** o ***Reward Hacking*** (manifestación computacional de la **Ley de Goodhart**: *"cuando una medida se convierte en objetivo, deja de ser una buena medida"*).
+  * El agente descubre que si crea 5 controladores y 5 servicios, la regla de `architecture.test.ts` le exigirá 10 archivos `.test.ts` independientes con ≥90% de cobertura. Su solución óptima bajo esas restricciones incompletas es agrupar todo el restaurante en un solo controlador y un solo servicio.
+* **Fuentes Verificadas:**
+  1. **Skalse, J., Howe, N., Krasheninnikov, D., & Krueger, D. (2022).** *"Defining and Characterizing Reward Hacking"*. **Advances in Neural Information Processing Systems (NeurIPS 2022)**, Vol. 35, pp. 9460–9471.
+  2. **Pan, A., Bhatia, K., & Steinhardt, J. (2022).** *"The Effects of Reward Misspecification: Mapping and Mitigating Misaligned Models"*. **Tenth International Conference on Learning Representations (ICLR 2022)**.
+  3. **Goodhart, C. A. E. (1975).** *"Problems of Monetary Management: The U.K. Experience"*. **Papers in Monetary Economics**, Vol. I, Reserve Bank of Australia.
+
+---
+
+### Slide T-05 — Nivel 4: Determinismo Estructural Completo y Pase a Demo en Vivo (`demo-mas-determinista`)
+* **Componentes:** [`components/HarnessStageHeader.vue`](./components/HarnessStageHeader.vue) + [`components/scenes/SceneMasDeterminista.vue`](./components/scenes/SceneMasDeterminista.vue).
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino II · Nivel 4 · Determinismo Estructural Completo`
+  * `h1`: `Límites por función y archivo obligan a desacoplar cada entidad`
+  * *Evidencia Visual (Sensación: el `mage` y el `scribe` en maestría y sincronía total):* A las barreras de `ArchUnit` y `Coverage ≥ 90%` se suma la rejilla de complejidad de `ESLint` (`max-lines: 250` por archivo y `max-lines-per-function: 35`). El haz atraviesa la rejilla y se cristaliza en **6 dominios desacoplados** (`usuario`, `mesa`, `categoria`, `plato`, `comanda`, `health`), cada uno con su `controller` (≤57 LOC), `service` y `__tests__` (16 suites en verde, `--sage`), cerrando con la señal visual para pasar a la demostración en vivo en la computadora del expositor.
+* **Contexto Científico y Guion:**
+  * Al acotar simultáneamente la **estructura entre capas** (`ArchUnit`), la **verificación empírica** (`Coverage ≥ 90%` + test 1:1) y la **granularidad léxica** (`max-lines: 250`, `max-lines-per-function: 35`), el espacio de soluciones válidas converge hacia una arquitectura limpia de alta cohesión y bajo acoplamiento.
+  * Esta diapositiva introduce directamente la inspección en vivo de las 4 carpetas en VS Code y la ejecución de las suites de pruebas en terminal.
+* **Fuentes Verificadas:**
+  1. **McCabe, T. J. (1976).** *"A Complexity Measure"*. **IEEE Transactions on Software Engineering**, SE-2(4), 308–320.
+  2. **Nagappan, N., Ball, T., & Zeller, A. (2006).** *"Mining Metrics to Predict Component Failures"*. **Proceedings of the 28th International Conference on Software Engineering (ICSE '06)**, ACM, pp. 452–461.
+  3. **Parnas, D. L. (1972).** *"On the Criteria To Be Used in Decomposing Systems into Modules"*. **Communications of the ACM**, 15(12), 1053–1058.
+  4. **Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., & Yao, S. (2023).** *"Reflexion: Language Agents with Verbal Reinforcement Learning"*. **Advances in Neural Information Processing Systems (NeurIPS 2023)**, Vol. 36.
 
 ---
 
