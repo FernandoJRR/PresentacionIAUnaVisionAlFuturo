@@ -224,34 +224,92 @@ Para garantizar una presentación de nivel de congreso internacional, el diseño
 ---
 
 ## PARTE 2: CAMINO 1 — SESIÓN DE LA MAÑANA (Estudiantes de Primer Año)
-> **Enfoque:** *Controlar a la IA y no que la IA nos controle: Conceptos, Maneras de Usarlo, Cómo Hablar con la IA e Interacción Consciente.*
+> **Enfoque:** *Controlar a la IA y no que la IA nos controle: descarga cognitiva, modelos mentales, diálogo socrático, estructura del problema y verificación.*
+> **Marco común:** [`components/AprendizStageHeader.vue`](./components/AprendizStageHeader.vue) con la franja del ciclo `Descarga Cognitiva → 1 · Pensar → 2 · Preguntar → 3 · Verificar → 4 · Explicar`.
+> **Hilo visual (sin texto):** [`components/ControlOrb.vue`](./components/ControlOrb.vue). En el nivel 0 el orbe arrastra al `scribe` con una correa carmesí y chispas caóticas; en cada paso la oscilación disminuye y el color pasa a oro; en el nivel 4 orbita en un anillo `--sage` bajo control.
 
 ---
 
-### Slide M-01 — Controlar a la IA: Evitar la Descarga Cognitiva (*Cognitive Offloading*)
+### Slide M-01a — Delegar en herramientas es normal (*Cognitive Offloading*)
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Camino I · Fundamentos y Cognición`
-  * `h1`: `Controlar a la IA: usarla para comprender, nunca para evadir el razonamiento`
-  * *Contexto Científico y Guion:*
-    * Explicación de cómo el *Cognitive Offloading* (delegar la resolución de problemas básicos en primer año) impide formar los modelos mentales de programación. Cómo usar la IA como tutor socrático que explica conceptos y reta al estudiante en lugar de copiar y pegar soluciones.
+  * `.label`: `Camino I · Sesión Matutina · Descarga Cognitiva`
+  * `h1`: `Delegar memoria en herramientas es normal y útil`
+  * *Evidencia Visual:* [`SceneDelegarHerramientas.vue`](./components/scenes/SceneDelegarHerramientas.vue). El `scribe` envía paquetes de cálculo, memoria y orientación a una calculadora, unas notas y un mapa; cada entrega llena un medidor de atención disponible.
+  * *Contexto Científico y Guion:* La descarga cognitiva es el uso de acciones físicas o del entorno para reducir la demanda cognitiva de una tarea. Es adaptativa: delegar información en un medio externo libera recursos para aprender lo siguiente.
 * **Fuentes Verificadas:**
   1. **Risko, E. F., & Gilbert, S. J. (2016).** *"Cognitive Offloading"*. **Trends in Cognitive Sciences**, 20(9), 676–688.
-  2. **Prather, J., et al. (2023).** *"‘It’s Weird That it Knows What I Want’: Usability and Interactions with Copilot for Novice Programmers"*. **ACM Transactions on Computer-Human Interaction (TOCHI)**, 31(1), 1–31.
-  3. **Kazemitabaar, M., et al. (2023).** *"Studying the Effect of AI Code Generators on Supporting Novice Learners in Introductory Programming"*. **ACM CHI 2023**.
+  2. **Storm, B. C., & Stone, S. M. (2015).** *"Saving-Enhanced Memory: The Benefits of Saving on the Learning and Remembering of New Information"*. **Psychological Science**, 26(2), 182–188. (Replicado por Runge, Frings & Tempel, 2019.)
 
 ---
 
-### Slide M-02 — Cómo Hablar e Interactuar con la IA: Estructura Lógica y Contexto
+### Slide M-01b — Delegar lo que estás aprendiendo frena el aprendizaje
 * **Afirmación Principal (En Slide — Texto Técnico):**
-  * `.label`: `Camino I · Comunicación e Interacción`
-  * `h1`: `La calidad de la respuesta depende de cómo estructuras el problema y el contexto`
-  * *Contexto Científico y Guion:*
-    * Formas de interactuar con los modelos: descomposición de problemas, provisión de contexto, definición de restricciones, ejemplos (*Few-Shot*) y razonamiento paso a paso (*Chain-of-Thought*).
-    * Modos de interacción (*Exploración* vs. *Aceleración*) y verificación constante de cada respuesta frente a los fundamentos aprendidos en clase.
+  * `.label`: `Camino I · Sesión Matutina · Descarga Cognitiva`
+  * `h1`: `Delegar lo que estás aprendiendo frena el aprendizaje`
+  * *Evidencia Visual:* [`SceneDelegarAprendizaje.vue`](./components/scenes/SceneDelegarAprendizaje.vue). Dos carriles, `IA que responde` (copia, cuaderno vacío) e `IA que guía` (el cuaderno se llena); barras de práctica y de examen sin IA relativas al grupo de control.
+  * *Contexto Científico y Guion:* En un experimento de campo con ~1 000 estudiantes, el acceso a un GPT sin restricciones mejoró la práctica (+48%) pero redujo el desempeño en el examen sin IA (−17%) frente al control. Un tutor GPT con instrucciones que dan pistas en lugar de soluciones mejoró la práctica (+127%) y mitigó en gran medida el daño. El problema no es delegar, sino delegar la habilidad que se está construyendo.
+* **Fuentes Verificadas:**
+  1. **Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025).** *"Generative AI without guardrails can harm learning: Evidence from high school mathematics"*. **Proceedings of the National Academy of Sciences (PNAS)**, 122(26), e2422633122. DOI: 10.1073/pnas.2422633122.
+  2. **Risko, E. F., & Gilbert, S. J. (2016).** *"Cognitive Offloading"*. **Trends in Cognitive Sciences**, 20(9), 676–688.
+
+---
+
+### Slide M-02 — Paso 1 · Pensar: el modelo mental es tuyo
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino I · Sesión Matutina · Modelos Mentales`
+  * `h1`: `La IA predice texto; el modelo mental es tuyo`
+  * *Evidencia Visual:* [`SceneModeloMental.vue`](./components/scenes/SceneModeloMental.vue). A la izquierda, el código como texto generado; a la derecha, la traza de memoria (`i`, `total`, `salida`) que el `scribe` ejecuta paso a paso.
+  * *Contexto Científico y Guion:* Aprender a programar implica construir una máquina nocional: un modelo de cómo la computadora ejecuta el programa. Sorva propone hacerla un objetivo explícito de aprendizaje. El efecto de generación muestra que lo que uno produce se recuerda mejor que lo que solo lee.
+* **Fuentes Verificadas:**
+  1. **Sorva, J. (2013).** *"Notional Machines and Introductory Programming Education"*. **ACM Transactions on Computing Education (TOCE)**, 13(2), Article 8, 1–31. DOI: 10.1145/2483710.2483713.
+  2. **Slamecka, N. J., & Graf, P. (1978).** *"The Generation Effect: Delineation of a Phenomenon"*. **Journal of Experimental Psychology: Human Learning and Memory**, 4(6), 592–604.
+
+---
+
+### Slide M-03 — Paso 2 · Preguntar: diálogo socrático
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino I · Sesión Matutina · Diálogo Socrático`
+  * `h1`: `Pide preguntas, no respuestas`
+  * *Evidencia Visual:* [`SceneSocratico.vue`](./components/scenes/SceneSocratico.vue). Dos chats sobre el mismo problema (invertir una lista): `Modo respuesta` entrega el código; `Modo tutor` devuelve preguntas. El `scribe` es el estudiante y el `mage` es el modelo.
+  * *Contexto Científico y Guion:* Los asistentes educativos con límites pedagógicos evitan entregar la solución completa: responden con pseudocódigo, pistas y preguntas para mantener al estudiante razonando.
+* **Fuentes Verificadas:**
+  1. **Kazemitabaar, M., Ye, R., Wang, X., Henley, A. Z., Denny, P., Craig, M., & Grossman, T. (2024).** *"CodeAid: Evaluating a Classroom Deployment of an LLM-based Programming Assistant that Balances Student and Educator Needs"*. **ACM CHI 2024**. DOI: 10.1145/3613904.3642773.
+  2. **Liu, R., et al. (2024).** *"Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education"*. **ACM SIGCSE 2024**, 750–756. DOI: 10.1145/3626252.3630938.
+
+---
+
+### Slide M-04 — Paso 2 · Preguntar bien: estructura del problema
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino I · Sesión Matutina · Estructura del Problema`
+  * `h1`: `Estructura el problema antes de escribir el prompt`
+  * *Evidencia Visual:* [`ScenePromptEstructurado.vue`](./components/scenes/ScenePromptEstructurado.vue). Un prompt vago produce salidas dispersas que cambian en cada cuadro; el prompt estructurado se arma por bloques (Contexto, Objetivo, Restricción, Ejemplo, Formato) y produce una única salida acotada.
+  * *Contexto Científico y Guion:* Descomposición del problema, contexto, restricciones, ejemplos (*Few-Shot*) y razonamiento paso a paso (*Chain-of-Thought*). Si no puedes escribir los bloques, todavía no entiendes el problema.
 * **Fuentes Verificadas:**
   1. **Brown, T., et al. (2020).** *"Language Models are Few-Shot Learners"*. **Advances in Neural Information Processing Systems (NeurIPS 2020)**, Vol. 33, pp. 1877–1901.
   2. **Wei, J., et al. (2022).** *"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"*. **Advances in Neural Information Processing Systems (NeurIPS 2022)**, Vol. 35, pp. 24824–24837.
   3. **Barke, S., James, M. B., & Polikarpova, N. (2023).** *"Grounded Copilot: How Programmers Interact with Code-Generating Models"*. **PACMPL / OOPSLA 2023**, 7(OOPSLA1), 85–111.
+
+---
+
+### Slide M-05 — Paso 3 · Verificar: fluidez no es corrección
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino I · Sesión Matutina · Verificación`
+  * `h1`: `Una respuesta fluida no es una respuesta correcta`
+  * *Evidencia Visual:* [`SceneVerificacion.vue`](./components/scenes/SceneVerificacion.vue). Una lupa recorre una función `promedio` con un error sutil (`range(1, len(notas))`); la prueba `promedio([80, 90])` devuelve `45.0` en lugar de `85.0`. Dos indicadores: 52% y 39%.
+  * *Contexto Científico y Guion:* El 52% de las respuestas de ChatGPT a 517 preguntas de Stack Overflow contenía información incorrecta; en el estudio con usuarios, los participantes no detectaron la información incorrecta el 39% de las veces, por lo completo y bien redactado del texto. Mayor confianza en la IA se asocia con menos pensamiento crítico.
+* **Fuentes Verificadas:**
+  1. **Kabir, S., Udo-Imeh, D., Kou, B., & Zhang, T. (2024).** *"Is Stack Overflow Obsolete? An Empirical Study of the Characteristics of ChatGPT Answers to Stack Overflow Questions"*. **ACM CHI 2024**. DOI: 10.1145/3613904.3642596.
+  2. **Lee, H.-P., Sarkar, A., Tankelevitch, L., Drosos, I., Rintel, S., Banks, R., & Wilson, N. (2025).** *"The Impact of Generative AI on Critical Thinking: Self-Reported Reductions in Cognitive Effort and Confidence Effects From a Survey of Knowledge Workers"*. **ACM CHI 2025**, Article 1121. DOI: 10.1145/3706598.3713778.
+
+---
+
+### Slide M-06 — Paso 4 · Explicar: síntesis del ciclo
+* **Afirmación Principal (En Slide — Texto Técnico):**
+  * `.label`: `Camino I · Sesión Matutina · Síntesis`
+  * `h1`: `Si no puedes explicarlo, todavía no es tuyo`
+  * *Evidencia Visual:* [`SceneExplicar.vue`](./components/scenes/SceneExplicar.vue). Ciclo en rombo Pensar → Preguntar → Verificar → Explicar recorrido por un marcador; en el centro, `mage` y `scribe` juntos con el orbe orbitando en un anillo `--sage` (cierre del hilo visual).
+  * *Contexto Científico y Guion:* Regla de trabajo: nunca entregar una línea que no se pueda explicar en el pizarrón. Integra los pasos anteriores; su flecha siguiente conduce a `cierre`.
+* **Fuentes:** Síntesis de M-01a a M-05.
 
 ---
 

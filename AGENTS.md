@@ -66,6 +66,8 @@ PresentacionIAUnaVisionAlFuturo/
 │   ├── SystemPipelines.vue     # Tuberías RAG y agente de voz (Slide 05)
 │   ├── AgentHub.vue            # Agente con herramientas, aciertos y fallos (Slide 06)
 │   ├── Orchestra.vue           # Del caos al orden a través de guías (Slide 07)
+│   ├── AprendizStageHeader.vue # Marco de Camino I: encabezado, ControlOrb y franja del ciclo
+│   ├── ControlOrb.vue          # Hilo visual de Camino I: el orbe pasa de arrastrar al escriba a orbitar bajo control
 │   ├── PathFork.vue            # Selector interactivo en "El Cruce de Caminos" (único lugar con alegoría escrita)
 │   ├── PixelCharacter.vue      # Motor de sprites 16x20 con compresión RLE y animación CSS steps()
 │   ├── PixelIcon.vue           # Motor de íconos 8x8 en currentColor
