@@ -51,11 +51,11 @@ class: ornate credits-slide
       <h2>Fernando<br>Rodriguez</h2>
       <span class="label">Software Engineer</span>
       <ul class="handles">
-        <li><PixelIcon name="in" /> fernanrod</li>
+        <li><PixelIcon name="in" /> /in/fernanrod</li>
         <li><PixelIcon name="gh" /> FernandoJRR</li>
       </ul>
       <figure class="qr">
-        <QrCode url="https://example.com" />
+        <QrCode url="https://fernandojrr.github.io/portfolio/" />
         <figcaption class="label">portfolio</figcaption>
       </figure>
     </div>
@@ -66,11 +66,11 @@ class: ornate credits-slide
       <h2>Mario<br>Tobar</h2>
       <span class="label">Software Engineer</span>
       <ul class="handles">
-        <li><PixelIcon name="in" /> marito-r-t</li>
+        <li><PixelIcon name="in" /> /in/marito-r-t</li>
         <li><PixelIcon name="gh" /> Marito-R-T</li>
       </ul>
       <figure class="qr">
-        <QrCode url="https://example.com" />
+        <QrCode url="https://marito-website.vercel.app/" />
         <figcaption class="label">portfolio</figcaption>
       </figure>
     </div>
