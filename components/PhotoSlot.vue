@@ -32,6 +32,11 @@ defineProps({
 img,
 .pending { display: block; width: 128px; height: 96px; image-rendering: pixelated; }
 
+img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
 .pending {
   display: flex;
   align-items: center;

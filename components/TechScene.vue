@@ -34,7 +34,11 @@ const color = i => ERAS[i.era]?.color ?? 'var(--ink)'
         <span class="label">{{ item?.year }} · {{ field }}</span>
         <h1>{{ title }}</h1>
       </div>
-      <PhotoSlot v-if="item?.photo" :caption="item.photo" />
+      <PhotoSlot
+        v-if="item?.photo"
+        :src="typeof item.photo === 'object' ? item.photo.src : item.photoSrc"
+        :caption="typeof item.photo === 'object' ? item.photo.caption : item.photo"
+      />
       <PixelCharacter :who="cast" facing="left" class="tech-cast" />
     </header>
 
